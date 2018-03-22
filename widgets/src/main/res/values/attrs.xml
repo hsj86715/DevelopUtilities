@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleScaleView">
+        <attr name="circle_mode" format="enum">
+            <enum name="whole" value="0"/>
+            <enum name="half" value="1"/>
+            <enum name="fan" value="2"/>
+        </attr>
+        <attr name="scale_mode" format="enum">
+            <enum name="clock" value="0"/>
+            <enum name="compass" value="1"/>
+            <enum name="radar" value="2"/>
+            <enum name="speed" value="3"/>
+        </attr>
+        <attr name="half_direction" format="enum">
+            <enum name="half_top" value="0"/>
+            <enum name="half_right" value="1"/>
+            <enum name="half_bottom" value="2"/>
+            <enum name="half_left" value="3"/>
+        </attr>
+        <attr name="fan_degree_from" format="float|integer|reference"/>
+        <attr name="fan_degree_to" format="float|integer|reference"/>
+        <attr name="scale_color_thin" format="color|reference"/>
+        <attr name="scale_color_thick" format="color|reference"/>
+        <attr name="scale_value_textColor" format="color|reference"/>
+        <attr name="scale_value_textSize" format="dimension|reference"/>
+        <attr name="scale_step_count" format="integer|reference"/>
+        <attr name="indicator_color" format="color|reference"/>
+        <attr name="show_circle_border" format="boolean|reference"/>
+        <attr name="circle_border_color" format="color|reference"/>
+        <attr name="circle_border_stroke" format="dimension|reference"/>
+        <attr name="scale_thin_stroke" format="dimension|reference"/>
+        <attr name="scale_thick_stroke" format="dimension|reference"/>
+        <attr name="radar_scan_color" format="color|reference"/>
+    </declare-styleable>
+</resources>

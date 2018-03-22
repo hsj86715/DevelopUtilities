@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CircleScale_compass">
+        <item name="scale_mode">compass</item>
+        <item name="circle_mode">whole</item>
+        <item name="scale_color_thin">#80FFFFFF</item>
+        <item name="scale_color_thick">#FFFFFF</item>
+        <item name="scale_value_textColor">#FFFFFF</item>
+        <item name="scale_value_textSize">14sp</item>
+        <item name="indicator_color">#ccFF0000</item>
+        <item name="show_circle_border">false</item>
+        <item name="scale_thin_stroke">1dp</item>
+        <item name="scale_thick_stroke">1.5dp</item>
+        <item name="scale_step_count">180</item>
+    </style>
+</resources>
