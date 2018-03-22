@@ -58,8 +58,8 @@ public class PreferenceManager {
             return spf.getFloat(key, (float) defValue);
         } else if (defValue instanceof Long) {
             return spf.getLong(key, (long) defValue);
-        } else if (defValue instanceof Set) {
-            return spf.getStringSet(key, (Set<String>) defValue);
+//        } else if (defValue instanceof Set) {
+//            return spf.getStringSet(key, (Set<String>) defValue);
         } else {
             return spf.getString(key, null);
         }
