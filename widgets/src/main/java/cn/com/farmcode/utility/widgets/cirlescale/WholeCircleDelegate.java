@@ -7,7 +7,6 @@ import cn.com.farmcode.utility.widgets.CircleScaleView;
 
 /**
  * @author hushujun
- * @hide
  */
 public class WholeCircleDelegate extends AbstractDelegate {
 

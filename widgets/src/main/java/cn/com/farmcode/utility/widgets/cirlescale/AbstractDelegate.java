@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
@@ -293,6 +294,28 @@ abstract class AbstractDelegate implements CircleScaleDelegate {
     public void draw(Canvas canvas) {
         if (mDelegateImpl != null) {
             mDelegateImpl.draw(canvas);
+        }
+    }
+
+    @Override
+    public void onAttachedToWindow() {
+        if (mDelegateImpl != null) {
+            mDelegateImpl.onAttachedToWindow();
+        }
+
+    }
+
+    @Override
+    public void onDetachedFromWindow() {
+        if (mDelegateImpl != null) {
+            mDelegateImpl.onDetachedFromWindow();
+        }
+    }
+
+    @Override
+    public void onSizeChanged(int w, int h, int oldw, int oldh) {
+        if (mDelegateImpl != null) {
+            mDelegateImpl.onSizeChanged(w, h, oldw, oldh);
         }
     }
 }

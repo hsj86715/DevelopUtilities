@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.os.Build;
+import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
@@ -83,14 +84,19 @@ public class CircleScaleView extends View {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mDelegate.setCurrentAngle(mDelegate.getCurrentAngle() + 6);
-                invalidate();
-                postDelayed(this, 1000);
-            }
-        }, 1000);
+        mDelegate.onAttachedToWindow();
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        mDelegate.onDetachedFromWindow();
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        mDelegate.onSizeChanged(w, h, oldw, oldh);
     }
 
     @Override
@@ -107,7 +113,7 @@ public class CircleScaleView extends View {
         return mDelegate.getCurrentAngle();
     }
 
-    public void setIndicatorColor(int color) {
+    public void setIndicatorColor(@ColorInt int color) {
         mDelegate.setIndicatorColor(color);
     }
 
@@ -127,7 +133,7 @@ public class CircleScaleView extends View {
         mDelegate.setIndicatorColorRes(colorRes);
     }
 
-    public void setScaleTextColor(int color) {
+    public void setScaleTextColor(@ColorInt int color) {
         mDelegate.setScaleTextColor(color);
     }
 
@@ -155,7 +161,7 @@ public class CircleScaleView extends View {
         return mDelegate.getScaleStepsCount();
     }
 
-    public void setScaleThickColor(int color) {
+    public void setScaleThickColor(@ColorInt int color) {
         mDelegate.setScaleThickColor(color);
     }
 
@@ -175,7 +181,7 @@ public class CircleScaleView extends View {
         return mDelegate.getScaleThickStroke();
     }
 
-    public void setScaleThinColor(int color) {
+    public void setScaleThinColor(@ColorInt int color) {
         mDelegate.setScaleThinColor(color);
     }
 
@@ -195,7 +201,7 @@ public class CircleScaleView extends View {
         return mDelegate.getScaleThinStroke();
     }
 
-    public void setRadarScanColor(int color) {
+    public void setRadarScanColor(@ColorInt int color) {
         mDelegate.setRadarScanColor(color);
     }
 
@@ -223,7 +229,7 @@ public class CircleScaleView extends View {
         return mDelegate.getCircleBorderStroke();
     }
 
-    public void setCircleBorderColor(int color) {
+    public void setCircleBorderColor(@ColorInt int color) {
         mDelegate.setCircleBorderColor(color);
     }
 

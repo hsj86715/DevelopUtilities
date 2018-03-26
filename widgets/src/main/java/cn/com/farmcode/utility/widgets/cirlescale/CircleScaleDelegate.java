@@ -2,6 +2,7 @@ package cn.com.farmcode.utility.widgets.cirlescale;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.os.Parcelable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 
@@ -9,7 +10,6 @@ import cn.com.farmcode.utility.widgets.CircleScaleView;
 
 /**
  * @author hushujun
- * @hide
  */
 public interface CircleScaleDelegate {
 
@@ -103,4 +103,10 @@ public interface CircleScaleDelegate {
     void onMeasure(int widthMeasureSpec, int heightMeasureSpec);
 
     void draw(Canvas canvas);
+
+    void onAttachedToWindow();
+
+    void onDetachedFromWindow();
+
+    void onSizeChanged(int w, int h, int oldw, int oldh);
 }

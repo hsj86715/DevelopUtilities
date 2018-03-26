@@ -6,8 +6,8 @@ import android.graphics.Rect;
 
 import cn.com.farmcode.utility.widgets.R;
 
-public class CompassDelegate implements DelegateImpl {
-    private static final String TAG = "WholeCircleDelegate";
+class CompassDelegate implements DelegateImpl {
+    private static final String TAG = "CompassDelegate";
     private static final int[] sDirectionStr = {R.string.direction_e, R.string.direction_s,
             R.string.direction_w, R.string.direction_n};
     private int mCenterX;
@@ -36,6 +36,23 @@ public class CompassDelegate implements DelegateImpl {
     }
 
     @Override
+    public void onAttachedToWindow() {
+//        mDelegate.getCircleScaleView().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                mDelegate.setCurrentAngle(mDelegate.getCurrentAngle() + 6);
+//                mDelegate.getCircleScaleView().invalidate();
+//                mDelegate.getCircleScaleView().postDelayed(this, 1000);
+//            }
+//        }, 1000);
+    }
+
+    @Override
+    public void onDetachedFromWindow() {
+
+    }
+
+    @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int width = mDelegate.getCircleScaleView().getMeasuredWidth() - mDelegate.getCircleScaleView().getPaddingStart()
                 - mDelegate.getCircleScaleView().getPaddingEnd();
@@ -56,6 +73,11 @@ public class CompassDelegate implements DelegateImpl {
     public void draw(Canvas canvas) {
         drawDirections(canvas);
         drawIndicator(canvas, mDelegate.getCurrentAngle());
+    }
+
+    @Override
+    public void onSizeChanged(int w, int h, int oldw, int oldh) {
+
     }
 
     private void drawDirections(Canvas canvas) {

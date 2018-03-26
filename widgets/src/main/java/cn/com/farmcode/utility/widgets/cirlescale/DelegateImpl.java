@@ -8,7 +8,13 @@ public interface DelegateImpl {
 
     void initPaint();
 
+    void onAttachedToWindow();
+
+    void onDetachedFromWindow();
+
     void onMeasure(int widthMeasureSpec, int heightMeasureSpec);
 
     void draw(Canvas canvas);
+
+    void onSizeChanged(int w, int h, int oldw, int oldh);
 }

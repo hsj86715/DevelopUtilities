@@ -58,11 +58,17 @@ public class PreferenceManager {
             return spf.getFloat(key, (float) defValue);
         } else if (defValue instanceof Long) {
             return spf.getLong(key, (long) defValue);
-//        } else if (defValue instanceof Set) {
-//            return spf.getStringSet(key, (Set<String>) defValue);
         } else {
             return spf.getString(key, null);
         }
+    }
+
+    public static Set<String> getStringSet(Context context, String key, Set<String> defValue) {
+        if (TextUtils.isEmpty(key)) {
+            return null;
+        }
+        SharedPreferences spf = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        return spf.getStringSet(key, defValue);
     }
 
     public static boolean contain(Context context, @NonNull String key) {
