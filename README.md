@@ -1,11 +1,11 @@
-#Android development daily Utilities
+# Android development daily Utilities
 <table>
     <tr>
         <td>This library is collected for daily android development use, in the feature, this may contain much more customer view/widget or tools. Current latest version is 1.0.1</td>
     </tr>
 </table>
 
-##Widgets
+## Widgets
 <p>For the version 1.0.1, updated the CircleScaleView's structure, improve extension. </p>
 <p>Maven:</p>
            
@@ -26,7 +26,7 @@
     <artifact name='developUtility.widget' ext='pom' ></artifact>
     </dependency>
 
-##Tools
+## Tools
 <p>In the tools library, there contain tools for SharePrefrence、encrypt/decrypt、String check and so on.</p>
 <p>Maven:</p>
 
