@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion = target_sdk
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 27
+        minSdkVersion min_sdk
+        targetSdkVersion target_sdk
         versionCode = version_code
         versionName = version_name
 
@@ -27,15 +27,15 @@ dependencies {
 
     implementation "com.android.support:appcompat-v7:$support_version"
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-publish {
-    userOrg ='hsj86715'
-    groupId ='cn.com.farmcode'
-    artifactId = 'developUtility.widget'
-    publishVersion = version_name
-    desc = 'This is an widget library for daily develop with.'
-    website = 'https://github.com/hsj86715/DevelopUtilities'
-}
+//publish {
+//    userOrg = 'hsj86715'
+//    groupId = 'cn.com.farmcode'
+//    artifactId = 'developUtility.widget'
+//    publishVersion = version_name
+//    desc = 'This is an widget library for daily develop with.'
+//    website = 'https://github.com/hsj86715/DevelopUtilities'
+//}

@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion = target_sdk
@@ -31,11 +31,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-publish {
-    userOrg = 'hsj86715'
-    groupId = 'cn.com.farmcode'
-    artifactId = 'developUtility.tools'
-    publishVersion = version_name
-    desc = 'This is an tools library for daily develop with.'
-    website = 'https://github.com/hsj86715/DevelopUtilities'
-}
+//publish {
+//    userOrg = 'hsj86715'
+//    groupId = 'cn.com.farmcode'
+//    artifactId = 'developUtility.app'
+//    publishVersion = version_name
+//    desc = 'This is an application compat library for daily develop with.'
+//    website = 'https://github.com/hsj86715/DevelopUtilities'
+//}
