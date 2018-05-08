@@ -33,17 +33,17 @@
     <dependency>
     <groupId>cn.com.farmcode</groupId>
     <artifactId>developUtility.tools</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <type>pom</type>
     </dependency>
 
 <p>Gradle:</p>
 
-    compile 'cn.com.farmcode:developUtility.tools:1.0.2'
+    compile 'cn.com.farmcode:developUtility.tools:1.0.3'
     
 <p>Ivy:</p>
 
-    <dependency org='cn.com.farmcode' name='developUtility.tools' rev='1.0.2'>
+    <dependency org='cn.com.farmcode' name='developUtility.tools' rev='1.0.3'>
       <artifact name='developUtility.tools' ext='pom' ></artifact>
     </dependency>
     
