@@ -166,4 +166,22 @@ public final class Logger {
             Log.e(getDefaultTag(), getStack() + msg, throwable);
         }
     }
+
+    public static void wtf(String msg) {
+        if (isPrintAble) {
+            Log.wtf(getDefaultTag(), getStack() + msg);
+        }
+    }
+
+    public static void wtf(String TAG, String msg) {
+        if (isPrintAble) {
+            Log.wtf(TAG, getStack() + msg);
+        }
+    }
+
+    public static void wtf(String TAG, String msg, Throwable throwable) {
+        if (isPrintAble) {
+            Log.wtf(TAG, getStack() + msg, throwable);
+        }
+    }
 }

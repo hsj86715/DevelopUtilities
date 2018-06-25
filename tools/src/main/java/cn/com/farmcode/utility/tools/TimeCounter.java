@@ -12,6 +12,8 @@ public class TimeCounter {
     private static long sStart;
     private static long sStep;
     private static long sStepStart;
+    private static boolean isStarted = false;
+    private static boolean isStepStarted = false;
 
     /**
      * Start count time cost
@@ -19,6 +21,7 @@ public class TimeCounter {
     public static void start() {
         sStart = SystemClock.elapsedRealtime();
         sStep = 0;
+        isStarted = true;
     }
 
     /**
@@ -50,20 +53,23 @@ public class TimeCounter {
         if (sStart == 0) {
             sStart = current;
             sStep = 0;
+            isStarted = true;
         }
         sStepStart = current;
+        isStepStarted = true;
     }
 
     /**
      * @return the time cost from {@link #stepStart()}
      */
     public static long stepEnd() {
-        if (sStepStart == 0) {
+        if (sStepStart == 0 || !isStepStarted) {
             throw new AndroidRuntimeException("You Must Call stepStart() first");
         }
         long current = SystemClock.elapsedRealtime();
         long cost = current - sStepStart;
         sStepStart = 0;
+        isStepStarted = false;
         return cost;
     }
 
@@ -74,8 +80,8 @@ public class TimeCounter {
      * @return the time cost from {@link #start()} to this moment, not care how many steps has called before this
      */
     public static long stepTotal() {
-        if (sStart == 0) {
-            throw new AndroidRuntimeException("You Must Call start()first");
+        if (sStart == 0 || !isStarted) {
+            throw new AndroidRuntimeException("You Must Call start() first");
         }
         long current = SystemClock.elapsedRealtime();
         sStep = current;
@@ -89,11 +95,20 @@ public class TimeCounter {
      * @return the total time cost from{@link #start()}
      */
     public static long stop() {
-        if (sStart == 0) {
+        if (sStart == 0 || !isStarted) {
             throw new AndroidRuntimeException("You Must Call start() first");
         }
         long totalCost = SystemClock.elapsedRealtime() - sStart;
         sStart = 0;
+        isStarted = false;
         return totalCost;
+    }
+
+    public static boolean isIsStarted() {
+        return isStarted;
+    }
+
+    public static boolean isIsStepStarted() {
+        return isStepStarted;
     }
 }
